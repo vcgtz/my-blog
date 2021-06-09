@@ -34,4 +34,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 */
 Route::prefix('experimental')->group(function () {
     Route::get('/random', [RandomController::class, 'index'])->name('experimental.random');
+    Route::get('/user', [RandomController::class, 'user'])->name('experimental.user');
 });
