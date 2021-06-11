@@ -94,7 +94,7 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     // Registration...
     if (Features::enabled(Features::registration())) {
         if ($enableViews) {
-            Route::get('/register2', [RegisteredUserController::class, 'create'])
+            Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware(['guest:'.config('fortify.guard')])
                 ->name('register');
         }
