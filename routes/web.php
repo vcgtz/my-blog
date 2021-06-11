@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Experimental\RandomController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,17 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+/**
+ * Admin Posts Routes
+ */
+Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
+    Route::prefix('posts')->group(function () {
+        Route::get('/', [PostController::class, 'index'])->name('admin.posts.index');
+        Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
+        Route::get('/{post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+    });
+});
 
 /**
  * Fortify Routes
