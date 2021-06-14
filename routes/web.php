@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Experimental\RandomController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -61,6 +62,12 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
         Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
         Route::get('/{post}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+    });
+
+    Route::prefix('tags')->group(function () {
+        Route::get('/', [TagController::class, 'index'])->name('admin.tags.index');
+        Route::get('/create', [TagController::class, 'create'])->name('admin.tags.create');
+        Route::get('/{post}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
     });
 });
 
