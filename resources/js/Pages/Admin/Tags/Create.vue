@@ -1,20 +1,18 @@
 <template>
-  <app-layout>
+  <admin-layout>
     <inertia-link :href="route('admin.tags.index')">Index</inertia-link>
     <inertia-link :href="route('admin.tags.create')">Create</inertia-link>
     <inertia-link :href="route('admin.tags.edit', 1)">Edit</inertia-link>
     <h1>Tags: Create</h1>
-  </app-layout>
+  </admin-layout>
 </template>
 
 <script>
-import AppLayout from '@/Layouts/AppLayout';
-import JetNavLink from '@/Jetstream/NavLink';
+import AdminLayout from '@/Layouts/AdminLayout';
 
 export default {
   components: {
-    AppLayout,
-    JetNavLink
+    AdminLayout,
   }
 }
 </script>

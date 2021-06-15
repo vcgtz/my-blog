@@ -9,12 +9,10 @@
 
 <script>
 import AdminLayout from '@/Layouts/AdminLayout';
-import JetNavLink from '@/Jetstream/NavLink';
 
 export default {
   components: {
     AdminLayout,
-    JetNavLink,
   }
 }
 </script>
