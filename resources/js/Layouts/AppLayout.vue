@@ -236,6 +236,7 @@
     import JetDropdownLink from '@/Jetstream/DropdownLink'
     import JetNavLink from '@/Jetstream/NavLink'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+    import Navbar from '@/Shared/Admin/Navbar';
 
     export default {
         components: {
@@ -245,6 +246,7 @@
             JetDropdownLink,
             JetNavLink,
             JetResponsiveNavLink,
+            Navbar
         },
 
         data() {
