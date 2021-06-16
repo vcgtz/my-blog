@@ -3,7 +3,7 @@
     <navbar></navbar>
     <main>
       <section>
-        <div class="pt-24 container flex">
+        <div class="pt-24">
           <slot></slot>
         </div>
       </section>
