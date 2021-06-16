@@ -135,7 +135,7 @@ export default {
     },
 
     today () {
-      return new Date().toString();
+      return new Date().toDateString();
     }
   },
  
