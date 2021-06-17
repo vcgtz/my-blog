@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex fixed w-full items-center justify-between shadow-md px-6 h-16 bg-green-800 text-gray-700 border-b border-gray-200 z-10">
+  <nav class="flex fixed w-full items-center justify-between shadow-md px-6 h-16 bg-blue-800 text-gray-800 border-b border-blue-900 z-10">
     <div class="flex items-center font-black text-gray-200">
       <button class="mr-2" aria-label="Open Menu" @click="drawer">
         <svg
@@ -17,8 +17,8 @@
     </div>
 
     <div class="flex items-center">
-      <div class="hidden md:block md:flex md:justify-between md:bg-transparent">
-        <button title="Wishlist" class="flex items-center p-3 font-medium mr-2 text-center bg-gray-200 rounded-sm hover:bg-gray-300 focus:outline-none focus:bg-gray-300">
+      <div class="hidden md:flex md:justify-between md:bg-transparent">
+        <button title="Wishlist" class="flex items-center p-3 font-medium mr-2 text-center bg-gray-300 rounded-sm hover:bg-gray-400 focus:outline-none focus:bg-gray-400">
           <svg
             fill="none"
             stroke-linecap="round"
@@ -31,7 +31,7 @@
           </svg>
           <span>Wishlist</span>
         </button>
-        <button title="Notifications" class="flex items-center p-3 font-medium mr-2 text-center bg-gray-200 rounded-sm  hover:bg-gray-300 focus:outline-none focus:bg-gray-300">
+        <button title="Notifications" class="flex items-center p-3 font-medium mr-2 text-center bg-gray-300 rounded-sm  hover:bg-gray-400 focus:outline-none focus:bg-gray-400">
           <svg
             fill="none"
             stroke-linecap="round"
@@ -43,7 +43,7 @@
             <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
           </svg>
         </button>
-        <button title="Profile" class="flex items-center p-3 font-medium mr-2 text-center bg-gray-200 rounded-sm hover:bg-gray-300 focus:outline-none focus:bg-gray-300">
+        <button title="Profile" class="flex items-center p-3 font-medium mr-2 text-center bg-gray-300 rounded-sm hover:bg-gray-400 focus:outline-none focus:bg-gray-400">
           <svg
             fill="none"
             stroke-linecap="round"
@@ -81,40 +81,40 @@
     
     <aside
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
-      class="transform top-0 left-0 w-64 shadow-md bg-green-500 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30">
+      class="transform top-0 left-0 w-64 shadow-md bg-gray-300 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30">
       <span
         @click="isOpen = false"
-        class="flex w-full items-center p-4 border-b bg-green-600 border-green-800 font-black text-gray-200">
+        class="flex w-full items-center p-4 border-b bg-blue-800 border-blue-900 font-black text-gray-200">
         BLOG
       </span>
       
       <inertia-link @click="isOpen = false"
         :href="route('admin.posts.index')"
-        class="flex items-center p-4 text-gray-200 hover:bg-green-800 hover:text-white">
+        class="flex items-center p-4 text-gray-800 hover:bg-blue-400 hover:text-white">
         <span>Posts</span>
       </inertia-link>
       
       <inertia-link @click="isOpen = false"
         :href="route('admin.categories.index')"
-        class="flex items-center p-4 text-gray-200 hover:bg-green-800 hover:text-white">
+        class="flex items-center p-4 text-gray-800 hover:bg-blue-400 hover:text-white">
         <span>Categories</span>
       </inertia-link>
       
       <inertia-link @click="isOpen = false"
         :href="route('admin.tags.index')"
-        class="flex items-center p-4 text-gray-200 hover:bg-green-800 hover:text-white">
+        class="flex items-center p-4 text-gray-800 hover:bg-blue-400 hover:text-white">
         <span>Tags</span>
       </inertia-link>
       
       <div class="fixed bottom-0 w-full">
-        <div class="items p-4 text-center text-gray-200 font-semibold bg-green-800 hover:bg-green-900 w-full">
+        <div class="items p-4 text-center text-gray-200 font-semibold bg-blue-800 hover:bg-blue-900 w-full">
           <span>{{ user.name }}</span>
         </div>
         
           <p class="items-center p-4">
             <span class="font-bold text-gray-800">Today is</span>
             <br />
-            <span class="text-sm text-black">{{ today }}</span>
+            <span class="text-sm text-gray-900">{{ today }}</span>
           </p>
       </div>
     </aside>
