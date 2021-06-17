@@ -22665,11 +22665,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "auto-rows-auto pl-8 pt-0 pr-8 pb-8"
+  "class": "auto-rows-auto pl-8 pt-0 pr-8 pb-8 text-gray-800"
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "pb-2 w-full text-gray-800"
+  "class": "pb-2 w-full"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", {
   "class": "text-4xl font-black"
 }, "Section: TAGS"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", {
@@ -22837,11 +22837,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "auto-rows-auto pl-8 pt-0 pr-8 pb-8"
+  "class": "auto-rows-auto pl-8 pt-0 pr-8 pb-8 text-gray-800"
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "pb-2 w-full text-gray-800"
+  "class": "pb-2 w-full"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", {
   "class": "text-4xl font-black"
 }, "Section: TAGS"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", {
