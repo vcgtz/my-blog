@@ -25,13 +25,23 @@ class TagController extends Controller
     public function store(StoreTagRequest $request)
     {
         $validated = $request->validated();
-        $tag = Tag::create($validated);
+        Tag::create($validated);
 
         return Redirect::route('admin.tags.index');
     }
 
-    public function edit($tag)
+    public function edit(Tag $tag)
     {
-        return inertia('Admin/Tags/Edit');
+        return inertia('Admin/Tags/Edit', [
+            'tag' => $tag
+        ]);
+    }
+
+    public function update(StoreTagRequest $request, Tag $tag)
+    {
+        $validated = $request->validated();
+        $tag->update($validated);
+
+        return Redirect::route('admin.tags.index');
     }
 }

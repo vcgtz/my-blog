@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreTagRequest extends FormRequest
 {
@@ -24,7 +25,10 @@ class StoreTagRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:App\Models\Tag,name',
+            'name' => [
+                'required',
+                Rule::unique('tags')->ignore($this->tag)
+            ],
             'description' => 'required'
         ];
     }

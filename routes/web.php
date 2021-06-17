@@ -68,7 +68,8 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
         Route::get('/', [TagController::class, 'index'])->name('admin.tags.index');
         Route::get('/create', [TagController::class, 'create'])->name('admin.tags.create');
         Route::post('/', [TagController::class, 'store'])->name('admin.tags.store');
-        Route::get('/{post}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+        Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+        Route::put('/{tag}/edit', [TagController::class, 'update'])->name('admin.tags.update');
     });
 });
 
