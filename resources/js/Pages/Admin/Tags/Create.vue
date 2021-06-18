@@ -14,14 +14,12 @@
         <div class="mb-3 pt-0">
           <div class="mb-3">
             <label class="text-lg">Tag Name</label>
-            <input v-model="name"
-              name="name" type="text" placeholder="Tag name" class="px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full">
+            <admin-input v-model="name" id="name" name="name"></admin-input>
           </div>
           
           <div class="mb-3">
             <label class="text-lg">Tag Description</label>
-            <input v-model="description"
-              name="description" type="text" placeholder="Tag description" class="px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full">
+            <admin-input v-model="description" id="description" name="description"></admin-input>
           </div>
         </div>
 
@@ -35,11 +33,13 @@
 
 <script>
 import AdminLayout from '@/Layouts/AdminLayout';
+import AdminInput from '@/Shared/Admin/Input';
 import { Inertia } from '@inertiajs/inertia'
 
 export default {
   components: {
     AdminLayout,
+    AdminInput
   },
 
   data: () => ({
