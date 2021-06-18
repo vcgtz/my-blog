@@ -53,3 +53,6 @@ php artisan serve
 ```
 
 Now you can see the project running on `http://127.0.0.1:8000`.
+
+## License
+[MIT](LICENSE.md)
