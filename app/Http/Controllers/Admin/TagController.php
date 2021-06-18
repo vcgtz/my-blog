@@ -25,7 +25,14 @@ class TagController extends Controller
     public function store(StoreTagRequest $request)
     {
         $validated = $request->validated();
-        Tag::create($validated);
+        $tag = Tag::onlyTrashed()->where('name', $validated['name'])->first();
+
+        if ($tag) {
+            $tag->restore();
+            $tag->update($validated);
+        } else {
+            Tag::create($validated);
+        }
 
         return Redirect::route('admin.tags.index');
     }
