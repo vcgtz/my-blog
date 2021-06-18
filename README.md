@@ -1,5 +1,5 @@
 # Personal Blog
-Platform to manage your own personal blog
+Platform to manage your own personal blog.
 > This project is being developed thinking of being a completely personal blog, but that does not mean that it is the only possible purpose.
 
 ## Installation
@@ -52,4 +52,4 @@ And start the server:
 php artisan serve
 ```
 
-Now you can see the project running on `http://127.0.0.1:8000`
+Now you can see the project running on `http://127.0.0.1:8000`.
