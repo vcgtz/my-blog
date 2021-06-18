@@ -10,50 +10,19 @@
         <inertia-link :href="route('admin.tags.index')" class="text-blue-400 hover:text-blue-600 underline">Go back</inertia-link>
       </div>
 
-      <form @submit.prevent="store">
-        <div class="mb-3 pt-0">
-          <div class="mb-3">
-            <label class="text-lg">Tag Name</label>
-            <admin-input v-model="name" id="name" name="name"></admin-input>
-          </div>
-          
-          <div class="mb-3">
-            <label class="text-lg">Tag Description</label>
-            <admin-input v-model="description" id="description" name="description"></admin-input>
-          </div>
-        </div>
-
-        <button type="submit" class="bg-yellow-400 text-gray-800 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-          Save
-        </button>
-      </form>
+      <admin-tag-form event="store"></admin-tag-form>
     </div>
   </admin-layout>
 </template>
 
 <script>
 import AdminLayout from '@/Layouts/AdminLayout';
-import AdminInput from '@/Shared/Admin/Input';
-import { Inertia } from '@inertiajs/inertia'
+import AdminTagForm from '@/Shared/Admin/TagForm';
 
 export default {
   components: {
     AdminLayout,
-    AdminInput
-  },
-
-  data: () => ({
-    name: '',
-    description: ''
-  }),
-
-  methods: {
-    store () {
-      Inertia.post(this.route('admin.tags.store'), {
-        name: this.name,
-        description: this.description
-      })
-    }
+    AdminTagForm
   }
 }
 </script>
