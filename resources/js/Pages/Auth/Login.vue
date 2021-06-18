@@ -28,18 +28,17 @@
           <inertia-link v-if="canResetPassword" :href="route('password.request')" class="place-self- underline text-sm text-gray-600 hover:text-gray-900">
             Forgot your password?
           </inertia-link>
-
-        <jet-button :disabled="form.processing"
-          :class="{ 'opacity-25': form.processing }"
-          class="bg-yellow-400 text-gray-800 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-          Log in
-        </jet-button>
+          <admin-button :type="'submit'"
+            :disabled="form.processing"
+            :class="{ 'opacity-25': form.processing }"
+            class="bg-yellow-400">Log in</admin-button>
       </div>
     </form>
   </jet-authentication-card>
 </template>
 
 <script>
+import AdminButton from '@/Shared/Admin/Button';
 import JetAuthenticationCard from '@/Jetstream/AuthenticationCard'
 import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
 import JetButton from '@/Jetstream/Button'
@@ -50,6 +49,7 @@ import JetValidationErrors from '@/Jetstream/ValidationErrors'
 
 export default {
   components: {
+    AdminButton,
     JetAuthenticationCard,
     JetAuthenticationCardLogo,
     JetButton,

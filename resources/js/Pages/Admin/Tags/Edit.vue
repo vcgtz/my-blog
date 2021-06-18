@@ -34,7 +34,7 @@
 
 <script>
 import AdminLayout from '@/Layouts/AdminLayout';
-import AdminButton from '@/Shared/Admin/AdminButton';
+import AdminButton from '@/Shared/Admin/Button';
 import { Inertia } from '@inertiajs/inertia'
 
 export default {

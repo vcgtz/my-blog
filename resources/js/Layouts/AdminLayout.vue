@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AdminNavbar from '@/Shared/Admin/AdminNavbar';
+import AdminNavbar from '@/Shared/Admin/Navbar';
 
 export default {
   components: {

@@ -17,7 +17,7 @@
 
 <script>
 import AdminLayout from '@/Layouts/AdminLayout';
-import AdminTagTable from '@/Shared/Admin/AdminTagTable';
+import AdminTagTable from '@/Shared/Admin/TagTable';
 
 export default {
   components: {
