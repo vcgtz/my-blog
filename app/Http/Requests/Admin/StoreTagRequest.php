@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Rules\UniqueTag;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -27,7 +28,7 @@ class StoreTagRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                Rule::unique('tags')->ignore($this->tag)
+                new UniqueTag($this->tag)
             ],
             'description' => 'required'
         ];
