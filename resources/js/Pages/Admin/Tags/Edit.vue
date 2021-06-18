@@ -28,6 +28,9 @@
         <button type="submit" class="bg-yellow-400 text-gray-800 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
           Save
         </button>
+        <button @click="destroy" type="button" class="bg-red-400 text-gray-800 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+          Delete
+        </button>
       </form>
     </div>
   </admin-layout>
@@ -53,6 +56,11 @@ export default {
         name: this.name,
         description: this.description
       })
+    },
+
+    destroy () {
+      // Inertia.delete() equivalent
+      this.$inertia.delete(this.route('admin.tags.destroy', this.$page.props.tag));
     }
   },
 

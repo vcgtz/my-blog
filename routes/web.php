@@ -70,6 +70,7 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
         Route::post('/', [TagController::class, 'store'])->name('admin.tags.store');
         Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
         Route::put('/{tag}/edit', [TagController::class, 'update'])->name('admin.tags.update');
+        Route::delete('/{tag}/edit', [TagController::class, 'destroy'])->name('admin.tags.destroy');
     });
 });
 
