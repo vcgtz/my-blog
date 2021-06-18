@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navbar></navbar>
+    <admin-navbar></admin-navbar>
     <main>
       <section>
         <div class="pt-24">
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import Navbar from '@/Shared/Admin/Navbar';
+import AdminNavbar from '@/Shared/Admin/AdminNavbar';
 
 export default {
   components: {
-    Navbar
+    AdminNavbar
   },
 
   data() {

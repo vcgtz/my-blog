@@ -25,12 +25,8 @@
           </div>
         </div>
 
-        <button type="submit" class="bg-yellow-400 text-gray-800 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-          Save
-        </button>
-        <button @click="destroy" type="button" class="bg-red-400 text-gray-800 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-          Delete
-        </button>
+        <admin-button :type="'submit'" class="bg-yellow-400">Save</admin-button>
+        <admin-button @click="destroy" class="bg-red-400">Delete</admin-button>
       </form>
     </div>
   </admin-layout>
@@ -38,11 +34,13 @@
 
 <script>
 import AdminLayout from '@/Layouts/AdminLayout';
+import AdminButton from '@/Shared/Admin/AdminButton';
 import { Inertia } from '@inertiajs/inertia'
 
 export default {
   components: {
     AdminLayout,
+    AdminButton
   },
 
   data: () => ({
