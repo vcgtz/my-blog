@@ -55,7 +55,7 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
     Route::prefix('posts')->group(function () {
         Route::get('/', [PostController::class, 'index'])->name('admin.posts.index');
         Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
-        Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
+        Route::get('/{post}/edit', [TagController::class, 'edit'])->name('admin.posts.edit');
     });
 
     Route::prefix('categories')->group(function () {
