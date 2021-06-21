@@ -26,11 +26,11 @@
         </td>
         <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
           <span class="lg:hidden absolute top-1 left-1 bg-yellow-400 rounded px-2 py-1 text-xs font-bold uppercase">Status</span>
-          {{ category.status }}
+          {{ category.statusName }}
         </td>
         <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
           <span class="lg:hidden absolute top-1 left-1 bg-yellow-400 rounded px-2 py-1 text-xs font-bold uppercase">Actions</span>
-          <inertia-link href="#" class="text-blue-400 hover:text-blue-600 underline">Edit</inertia-link>
+          <inertia-link :href="route('admin.categories.edit', category)" class="text-blue-400 hover:text-blue-600 underline">Edit</inertia-link>
         </td>
       </tr>
     </tbody>

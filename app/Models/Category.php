@@ -11,11 +11,11 @@ class Category extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'active'];
-    protected $appends = ['status'];
+    protected $fillable = ['name', 'description', 'status'];
+    protected $appends = ['statusName'];
 
-    public function getStatusAttribute()
+    public function getStatusNameAttribute()
     {
-        return $this->active ? 'ACTIVE' : 'INACTIVE';
+        return $this->status ? 'ACTIVE' : 'INACTIVE';
     }
 }

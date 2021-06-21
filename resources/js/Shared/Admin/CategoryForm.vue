@@ -11,7 +11,7 @@
         </div>
 
         <div class="mb-3">
-          <admin-select-input :options="[{id: '1', value: 'ACTIVE'}, {id: '0', value: 'INACTIVE'}]" v-model="status" :error="$page.props.errors.status" label="Status" id="status" name="status"></admin-select-input>
+          <admin-select-input :options="[{id: 1, value: 'ACTIVE'}, {id: 0, value: 'INACTIVE'}]" v-model="status" :error="$page.props.errors.status" label="Status" id="status" name="status"></admin-select-input>
         </div>
       </div>
 
@@ -44,11 +44,11 @@ export default {
   data: () => ({
     name: '',
     description: '',
-    status: '1'
+    status: 1
   }),
 
   computed: {
-    tag () {
+    category () {
       return this.$page.props.category;
     },
 
@@ -83,9 +83,9 @@ export default {
   },
 
   mounted () {
-    if (this.tag) {
-      this.name = this.tag.name;
-      this.description = this.tag.description;
+    if (this.category) {
+      this.name = this.category.name;
+      this.description = this.category.description;
     }
   }
 }

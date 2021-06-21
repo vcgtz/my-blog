@@ -20,8 +20,10 @@ class CategoryController extends Controller
         return inertia('Admin/Categories/Create');
     }
 
-    public function edit($category)
+    public function edit(Category $category)
     {
-        return inertia('Admin/Categories/Edit');
+        return inertia('Admin/Categories/Edit', [
+            'category' => $category
+        ]);
     }
 }

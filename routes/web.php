@@ -55,13 +55,13 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
     Route::prefix('posts')->group(function () {
         Route::get('/', [PostController::class, 'index'])->name('admin.posts.index');
         Route::get('/create', [PostController::class, 'create'])->name('admin.posts.create');
-        Route::get('/{post}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+        Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
     });
 
     Route::prefix('categories')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
         Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-        Route::get('/{post}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
     });
 
     Route::prefix('tags')->group(function () {

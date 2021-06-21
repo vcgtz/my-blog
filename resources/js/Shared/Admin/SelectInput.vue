@@ -32,7 +32,7 @@ export default {
       required: true
     },
     modelValue: {
-      type: String,
+      type: Number,
       default: true
     },
     options: {
