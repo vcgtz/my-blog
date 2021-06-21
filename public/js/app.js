@@ -19791,7 +19791,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       name: '',
       description: '',
-      status: 1
+      status: 1,
+      statusOptions: [{
+        id: 1,
+        value: 'ACTIVE'
+      }, {
+        id: 0,
+        value: 'INACTIVE'
+      }]
     };
   },
   computed: {
@@ -19806,10 +19813,12 @@ __webpack_require__.r(__webpack_exports__);
     submitEvent: function submitEvent() {
       this[this.event]();
     },
-    store: function store() {//Inertia.post(this.route('admin.categories.store'), {
-      //  name: this.name,
-      //  description: this.description
-      //})
+    store: function store() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.post(this.route('admin.categories.store'), {
+        name: this.name,
+        description: this.description,
+        status: this.status
+      });
     },
     update: function update() {//Inertia.put(this.route('admin.categories.update', this.tag), {
       //  name: this.name,
@@ -25563,13 +25572,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_admin_select_input, {
-    options: [{
-      id: 1,
-      value: 'ACTIVE'
-    }, {
-      id: 0,
-      value: 'INACTIVE'
-    }],
+    options: _ctx.statusOptions,
     modelValue: _ctx.status,
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return _ctx.status = $event;
@@ -25580,7 +25583,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "status"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_admin_button, {
+  , ["options", "modelValue", "error"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_admin_button, {
     type: "submit",
     "class": "bg-yellow-400"
   }, {
@@ -26017,7 +26020,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: $props.name,
     value: $props.modelValue,
     onInput: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.$emit('update:modelValue', $event.target.value);
+      return _ctx.$emit('update:modelValue', parseInt($event.target.value));
     }),
     ref: "input",
     "class": "px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full"

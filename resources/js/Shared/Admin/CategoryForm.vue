@@ -11,7 +11,7 @@
         </div>
 
         <div class="mb-3">
-          <admin-select-input :options="[{id: 1, value: 'ACTIVE'}, {id: 0, value: 'INACTIVE'}]" v-model="status" :error="$page.props.errors.status" label="Status" id="status" name="status"></admin-select-input>
+          <admin-select-input :options="statusOptions" v-model="status" :error="$page.props.errors.status" label="Status" id="status" name="status"></admin-select-input>
         </div>
       </div>
 
@@ -44,7 +44,11 @@ export default {
   data: () => ({
     name: '',
     description: '',
-    status: 1
+    status: 1,
+    statusOptions: [
+      {id: 1, value: 'ACTIVE'},
+      {id: 0, value: 'INACTIVE'}
+    ]
   }),
 
   computed: {
@@ -63,10 +67,11 @@ export default {
     },
 
     store () {
-      //Inertia.post(this.route('admin.categories.store'), {
-      //  name: this.name,
-      //  description: this.description
-      //})
+      Inertia.post(this.route('admin.categories.store'), {
+        name: this.name,
+        description: this.description,
+        status: this.status
+      });
     },
 
     update () {

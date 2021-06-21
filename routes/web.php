@@ -61,6 +61,7 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
     Route::prefix('categories')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
         Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+        Route::post('/', [CategoryController::class, 'store'])->name('admin.categories.store');
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
     });
 
