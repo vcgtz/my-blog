@@ -12,4 +12,10 @@ class Category extends Model
     use SoftDeletes;
 
     protected $fillable = ['name', 'description', 'active'];
+    protected $appends = ['status'];
+
+    public function getStatusAttribute()
+    {
+        return $this->active ? 'ACTIVE' : 'INACTIVE';
+    }
 }
