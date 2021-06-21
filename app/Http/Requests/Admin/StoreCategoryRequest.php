@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Models\Category;
 use App\Rules\UniqueCategory;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -33,7 +34,7 @@ class StoreCategoryRequest extends FormRequest
             'description' => 'required',
             'status' => [
                 'required',
-                Rule::in([0, 1])
+                Rule::in([Category::$INACTIVE, Category::$ACTIVE])
             ]
         ];
     }

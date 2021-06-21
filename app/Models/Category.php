@@ -11,6 +11,9 @@ class Category extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public static $ACTIVE = 1;
+    public static $INACTIVE = 0;
+
     protected $fillable = ['name', 'description', 'status'];
     protected $appends = ['statusName'];
 

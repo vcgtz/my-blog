@@ -5,7 +5,7 @@
         <div class="mb-3">
           <admin-input v-model="name" :error="$page.props.errors.name" label="Tag Name" id="name" name="name"></admin-input>
         </div>
-        
+
         <div class="mb-3">
           <admin-input v-model="description" :error="$page.props.errors.description" label="Tag Description" id="description" name="description"></admin-input>
         </div>
@@ -59,14 +59,14 @@ export default {
       Inertia.post(this.route('admin.tags.store'), {
         name: this.name,
         description: this.description
-      })
+      });
     },
 
     update () {
       Inertia.put(this.route('admin.tags.update', this.tag), {
         name: this.name,
         description: this.description
-      })
+      });
     },
 
     destroy () {
