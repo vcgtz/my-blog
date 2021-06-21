@@ -51,4 +51,11 @@ class CategoryController extends Controller
 
         return Redirect::route('admin.categories.index');
     }
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return Redirect::route('admin.categories.index');
+    }
 }

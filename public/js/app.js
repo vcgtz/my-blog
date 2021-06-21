@@ -19827,8 +19827,9 @@ __webpack_require__.r(__webpack_exports__);
         status: this.status
       });
     },
-    destroy: function destroy() {// Inertia.delete() equivalent
-      //this.$inertia.delete(this.route('admin.categories.destroy', this.tag));
+    destroy: function destroy() {
+      // Inertia.delete() equivalent
+      this.$inertia["delete"](this.route('admin.categories.destroy', this.category));
     }
   },
   mounted: function mounted() {

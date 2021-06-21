@@ -64,6 +64,7 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
         Route::post('/', [CategoryController::class, 'store'])->name('admin.categories.store');
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
         Route::put('/{category}/edit', [CategoryController::class, 'update'])->name('admin.categories.update');
+        Route::delete('/{category}/edit', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
     });
 
     Route::prefix('tags')->group(function () {
