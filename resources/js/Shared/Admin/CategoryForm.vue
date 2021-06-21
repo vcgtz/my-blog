@@ -75,10 +75,11 @@ export default {
     },
 
     update () {
-      //Inertia.put(this.route('admin.categories.update', this.tag), {
-      //  name: this.name,
-      //  description: this.description
-      //})
+      Inertia.put(this.route('admin.categories.update', this.category), {
+        name: this.name,
+        description: this.description,
+        status: this.status
+      });
     },
 
     destroy () {
@@ -91,6 +92,7 @@ export default {
     if (this.category) {
       this.name = this.category.name;
       this.description = this.category.description;
+      this.status = this.category.status;
     }
   }
 }

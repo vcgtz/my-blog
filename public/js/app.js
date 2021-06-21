@@ -19820,10 +19820,12 @@ __webpack_require__.r(__webpack_exports__);
         status: this.status
       });
     },
-    update: function update() {//Inertia.put(this.route('admin.categories.update', this.tag), {
-      //  name: this.name,
-      //  description: this.description
-      //})
+    update: function update() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.put(this.route('admin.categories.update', this.category), {
+        name: this.name,
+        description: this.description,
+        status: this.status
+      });
     },
     destroy: function destroy() {// Inertia.delete() equivalent
       //this.$inertia.delete(this.route('admin.categories.destroy', this.tag));
@@ -19833,6 +19835,7 @@ __webpack_require__.r(__webpack_exports__);
     if (this.category) {
       this.name = this.category.name;
       this.description = this.category.description;
+      this.status = this.category.status;
     }
   }
 });

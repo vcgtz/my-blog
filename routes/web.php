@@ -63,6 +63,7 @@ Route::middleware(['auth', 'web'])->prefix('admin')->group(function () {
         Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
         Route::post('/', [CategoryController::class, 'store'])->name('admin.categories.store');
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::put('/{category}/edit', [CategoryController::class, 'update'])->name('admin.categories.update');
     });
 
     Route::prefix('tags')->group(function () {

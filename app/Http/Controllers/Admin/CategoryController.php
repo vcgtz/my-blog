@@ -43,4 +43,12 @@ class CategoryController extends Controller
             'category' => $category
         ]);
     }
+
+    public function update(StoreCategoryRequest $request, Category $category)
+    {
+        $validated = $request->validated();
+        $category->update($validated);
+
+        return Redirect::route('admin.categories.index');
+    }
 }
