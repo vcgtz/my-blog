@@ -20366,7 +20366,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     return {
       content: '',
-      apiKey: '',
       config: (_config = {
         height: 500,
         menubar: false,
@@ -20408,6 +20407,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         value: 'cpp'
       }]), _config)
     };
+  },
+  computed: {
+    tinymceApiKey: function tinymceApiKey() {
+      return this.$page.props.tinymceApiKey;
+    }
   },
   watch: {
     content: function content(value) {
@@ -26392,7 +26396,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     id: $props.id,
     name: $props.name,
-    apiKey: _ctx.apiKey,
+    apiKey: $options.tinymceApiKey,
     initialValue: _ctx.content,
     init: _ctx.config,
     ref: "editor"

@@ -6,7 +6,7 @@
       v-model="content"
       :id="id"
       :name="name"
-      :apiKey="apiKey"
+      :apiKey="tinymceApiKey"
       :initialValue="content"
       :init="config"
       ref="editor"></editor>
@@ -46,7 +46,6 @@ export default {
 
   data: () => ({
     content: '',
-    apiKey: '',
     config: {
       height: 500,
       menubar: false,
@@ -76,6 +75,12 @@ export default {
       ]
     }
   }),
+
+  computed: {
+    tinymceApiKey () {
+      return this.$page.props.tinymceApiKey;
+    }
+  },
 
   watch: {
     content (value) {
