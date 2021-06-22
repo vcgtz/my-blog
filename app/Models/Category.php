@@ -21,4 +21,9 @@ class Category extends Model
     {
         return $this->status ? 'ACTIVE' : 'INACTIVE';
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
