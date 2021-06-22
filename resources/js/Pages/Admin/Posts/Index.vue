@@ -7,7 +7,7 @@
       </div>
 
       <div class="pb-2 w-full">
-        <inertia-link href="#" class="text-blue-400 hover:text-blue-600 underline">Add new</inertia-link>
+        <inertia-link :href="route('admin.posts.create')" class="text-blue-400 hover:text-blue-600 underline">Add new</inertia-link>
       </div>
 
       <admin-post-table :posts="posts"></admin-post-table>
