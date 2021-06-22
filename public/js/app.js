@@ -20336,8 +20336,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _tinymce_tinymce_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tinymce/tinymce-vue */ "./node_modules/@tinymce/tinymce-vue/lib/es2015/main/ts/index.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -20362,50 +20360,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   data: function data() {
-    var _config;
-
     return {
       content: '',
-      config: (_config = {
+      config: {
         height: 500,
-        menubar: false,
-        plugins: ['advlist autolink lists link image charmap', 'searchreplace visualblocks code fullscreen', 'print preview anchor insertdatetime media', 'paste code help wordcount table codesample']
-      }, _defineProperty(_config, "menubar", 'file edit view insert format tools table tc help'), _defineProperty(_config, "toolbar", 'undo redo | formatselect | bold italic | \
-        alignleft aligncenter alignright | \
-        bullist numlist outdent indent | codesample | help'), _defineProperty(_config, "codesample_languages", [{
-        text: 'Text',
-        value: 'text'
-      }, {
-        text: 'HTML/XML',
-        value: 'markup'
-      }, {
-        text: 'JavaScript',
-        value: 'javascript'
-      }, {
-        text: 'CSS',
-        value: 'css'
-      }, {
-        text: 'PHP',
-        value: 'php'
-      }, {
-        text: 'Ruby',
-        value: 'ruby'
-      }, {
-        text: 'Python',
-        value: 'python'
-      }, {
-        text: 'Java',
-        value: 'java'
-      }, {
-        text: 'C',
-        value: 'c'
-      }, {
-        text: 'C#',
-        value: 'csharp'
-      }, {
-        text: 'C++',
-        value: 'cpp'
-      }]), _config)
+        plugins: ['advlist autolink lists link image charmap', 'searchreplace visualblocks code fullscreen', 'print preview anchor insertdatetime media', 'paste code help wordcount table codesample'],
+        menubar: 'file edit view insert format tools table tc help',
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | codesample | help',
+        codesample_languages: [{
+          text: 'Text',
+          value: 'text'
+        }, {
+          text: 'HTML/XML',
+          value: 'markup'
+        }, {
+          text: 'JavaScript',
+          value: 'javascript'
+        }, {
+          text: 'CSS',
+          value: 'css'
+        }, {
+          text: 'PHP',
+          value: 'php'
+        }, {
+          text: 'Ruby',
+          value: 'ruby'
+        }, {
+          text: 'Python',
+          value: 'python'
+        }, {
+          text: 'Java',
+          value: 'java'
+        }, {
+          text: 'C',
+          value: 'c'
+        }, {
+          text: 'C#',
+          value: 'csharp'
+        }, {
+          text: 'C++',
+          value: 'cpp'
+        }]
+      }
     };
   },
   computed: {
@@ -20561,7 +20557,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       title: '',
       slug: '',
-      content: '<h1>hello</h1>'
+      content: ''
     };
   },
   computed: {
@@ -20593,9 +20589,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     destroy: function destroy() {// Inertia.delete() equivalent
       // this.$inertia.delete(this.route('admin.categories.destroy', this.category));
-    },
-    test: function test(event) {
-      this.content = event;
     }
   },
   mounted: function mounted() {

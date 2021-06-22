@@ -48,7 +48,6 @@ export default {
     content: '',
     config: {
       height: 500,
-      menubar: false,
       plugins: [
         'advlist autolink lists link image charmap',
         'searchreplace visualblocks code fullscreen',
@@ -56,10 +55,7 @@ export default {
         'paste code help wordcount table codesample'
       ],
       menubar: 'file edit view insert format tools table tc help',
-      toolbar:
-        'undo redo | formatselect | bold italic | \
-        alignleft aligncenter alignright | \
-        bullist numlist outdent indent | codesample | help',
+      toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | codesample | help',
       codesample_languages: [
         { text: 'Text', value: 'text' },
         { text: 'HTML/XML', value: 'markup' },

@@ -46,7 +46,7 @@ export default {
   data: () => ({
     title: '',
     slug: '',
-    content: '<h1>hello</h1>',
+    content: '',
   }),
 
   computed: {
@@ -84,10 +84,6 @@ export default {
     destroy () {
       // Inertia.delete() equivalent
       // this.$inertia.delete(this.route('admin.categories.destroy', this.category));
-    },
-
-    test (event) {
-      this.content = event;
     }
   },
 
