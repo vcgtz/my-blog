@@ -7,7 +7,6 @@
       :id="id"
       :name="name"
       :apiKey="tinymceApiKey"
-      :initialValue="content"
       :init="config"
       ref="editor"></editor>
       <span
@@ -77,6 +76,14 @@ export default {
   computed: {
     tinymceApiKey () {
       return this.$page.props.tinymceApiKey;
+    },
+
+    initialContent () {
+      if (this.$page.props.post) {
+        return this.$page.props.post.content
+      }
+
+      return '';
     }
   },
 
@@ -84,6 +91,10 @@ export default {
     content (value) {
       this.$emit('update:content', value);
     }
+  },
+
+  mounted () {
+    this.content = this.initialContent
   }
 }
 </script>

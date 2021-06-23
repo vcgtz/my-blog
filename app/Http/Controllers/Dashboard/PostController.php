@@ -45,8 +45,18 @@ class PostController extends Controller
         return Redirect::route('dashboard.posts.index');
     }
 
-    public function edit($post)
+    public function edit(Post $post)
     {
-        return inertia('Dashboard/Posts/Edit');
+        return inertia('Dashboard/Posts/Edit', [
+            'post' => $post
+        ]);
+    }
+
+    public function update(StorePostRequest $request, Post $post)
+    {
+        $validated = $request->validated();
+        $post->update($validated);
+
+        return Redirect::route('dashboard.posts.index');
     }
 }

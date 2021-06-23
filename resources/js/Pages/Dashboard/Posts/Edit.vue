@@ -12,16 +12,19 @@
     </div>
 
     <div class="auto-rows-auto text-gray-800">
+      <dashboard-post-form event="update"></dashboard-post-form>
     </div>
   </dashboard-layout>
 </template>
 
 <script>
 import DashboardLayout from '@/Layouts/DashboardLayout';
+import DashboardPostForm from '@/Shared/Dashboard/PostForm';
 
 export default {
   components: {
     DashboardLayout,
+    DashboardPostForm
   }
 }
 </script>

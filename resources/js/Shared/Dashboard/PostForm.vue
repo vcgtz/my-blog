@@ -11,7 +11,7 @@
         </div>
 
         <div class="mb-3">
-          <dashboard-editor @update:content="content = $event" :error="$page.props.errors.content" label="Post Content" id="content" name="content"></dashboard-editor>
+          <dashboard-editor :initialValue="content" @update:content="content = $event" :error="$page.props.errors.content" label="Post Content" id="content" name="content"></dashboard-editor>
         </div>
       </div>
 
@@ -75,11 +75,11 @@ export default {
     },
 
     update () {
-      /*Inertia.put(this.route('dashboard.categories.update', this.category), {
-        name: this.name,
-        description: this.description,
-        status: this.status
-      });*/
+      Inertia.put(this.route('dashboard.posts.update', this.post), {
+        title: this.title,
+        slug: this.slug,
+        content: this.content
+      });
     },
 
     destroy () {
@@ -89,11 +89,11 @@ export default {
   },
 
   mounted () {
-    /*if (this.category) {
-      this.name = this.category.name;
-      this.description = this.category.description;
-      this.status = this.category.status;
-    }*/
+    if (this.post) {
+      this.title = this.post.title;
+      this.slug = this.post.slug;
+      this.content = this.post.content;
+    }
   }
 }
 </script>
