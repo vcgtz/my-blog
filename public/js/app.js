@@ -20638,12 +20638,11 @@ __webpack_require__.r(__webpack_exports__);
       this[this.event]();
     },
     store: function store() {
-      console.log(this.content);
-      /*Inertia.post(this.route('dashboard.categories.store'), {
-        name: this.name,
-        description: this.description,
-        status: this.status
-      });*/
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.post(this.route('dashboard.posts.store'), {
+        title: this.title,
+        slug: this.slug,
+        content: this.content
+      });
     },
     update: function update() {
       /*Inertia.put(this.route('dashboard.categories.update', this.category), {

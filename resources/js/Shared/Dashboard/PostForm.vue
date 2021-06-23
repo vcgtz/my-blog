@@ -67,12 +67,11 @@ export default {
     },
 
     store () {
-      console.log(this.content);
-      /*Inertia.post(this.route('dashboard.categories.store'), {
-        name: this.name,
-        description: this.description,
-        status: this.status
-      });*/
+      Inertia.post(this.route('dashboard.posts.store'), {
+        title: this.title,
+        slug: this.slug,
+        content: this.content
+      });
     },
 
     update () {

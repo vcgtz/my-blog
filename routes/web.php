@@ -42,6 +42,7 @@ Route::middleware(['auth', 'web'])->prefix('dashboard')->group(function () {
     Route::prefix('posts')->group(function () {
         Route::get('/', [PostController::class, 'index'])->name('dashboard.posts.index');
         Route::get('/create', [PostController::class, 'create'])->name('dashboard.posts.create');
+        Route::post('/', [PostController::class, 'store'])->name('dashboard.posts.store');
         Route::get('/{post}/edit', [TagController::class, 'edit'])->name('dashboard.posts.edit');
     });
 
