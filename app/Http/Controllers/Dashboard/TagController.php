@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreTagRequest;
+use App\Http\Requests\Dashboard\StoreTagRequest;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -12,14 +12,14 @@ class TagController extends Controller
 {
     public function index()
     {
-        return inertia('Admin/Tags/Index', [
+        return inertia('Dashboard/Tags/Index', [
             'tags' => Tag::all()
         ]);
     }
 
     public function create()
     {
-        return inertia('Admin/Tags/Create');
+        return inertia('Dashboard/Tags/Create');
     }
 
     public function store(StoreTagRequest $request)
@@ -34,12 +34,12 @@ class TagController extends Controller
             Tag::create($validated);
         }
 
-        return Redirect::route('admin.tags.index');
+        return Redirect::route('dashboard.tags.index');
     }
 
     public function edit(Tag $tag)
     {
-        return inertia('Admin/Tags/Edit', [
+        return inertia('Dashboard/Tags/Edit', [
             'tag' => $tag
         ]);
     }
@@ -49,13 +49,13 @@ class TagController extends Controller
         $validated = $request->validated();
         $tag->update($validated);
 
-        return Redirect::route('admin.tags.index');
+        return Redirect::route('dashboard.tags.index');
     }
 
     public function destroy(Tag $tag)
     {
         $tag->delete();
 
-        return Redirect::route('admin.tags.index');
+        return Redirect::route('dashboard.tags.index');
     }
 }

@@ -3,35 +3,37 @@
     <form @submit.prevent="submitEvent">
       <div class="mb-3 pt-0">
         <div class="mb-3">
-          <admin-input v-model="name" :error="$page.props.errors.name" label="Tag Name" id="name" name="name"></admin-input>
+          <dashboard-input v-model="name" :error="$page.props.errors.name" label="Tag Name" id="name" name="name"></dashboard-input>
         </div>
         
         <div class="mb-3">
-          <admin-input v-model="description" :error="$page.props.errors.description" label="Tag Description" id="description" name="description"></admin-input>
+          <dashboard-input v-model="description" :error="$page.props.errors.description" label="Tag Description" id="description" name="description"></dashboard-input>
         </div>
 
         <div class="mb-3">
-          <admin-select-input :options="statusOptions" v-model="status" :error="$page.props.errors.status" label="Status" id="status" name="status"></admin-select-input>
+          <dashboard-select-input :options="statusOptions" v-model="status" :error="$page.props.errors.status" label="Status" id="status" name="status"></dashboard-select-input>
         </div>
       </div>
 
-      <admin-button type="submit" class="bg-yellow-400">Save</admin-button>
-      <admin-button v-if="showDeleteButton" @click="destroy" class="bg-red-400">Delete</admin-button>
+      <dashboard-button type="submit" class="bg-yellow-400">Save</dashboard-button>
+      <dashboard-button v-if="showDeleteButton" @click="destroy" class="bg-red-400">Delete</dashboard-button>
     </form>
   </div>
 </template>
 
 <script>
-import AdminButton from '@/Shared/Admin/Button';
-import AdminInput from '@/Shared/Admin/Input';
-import AdminSelectInput from '@/Shared/Admin/SelectInput';
+import DashboardButton from '@/Shared/Dashboard/Button';
+import DashboardInput from '@/Shared/Dashboard/Input';
+import DashboardSelectInput from '@/Shared/Dashboard/SelectInput';
 import { Inertia } from '@inertiajs/inertia';
 
 export default {
+  name: 'DashboardCategoryForm',
+
   components: {
-    AdminButton,
-    AdminInput,
-    AdminSelectInput
+    DashboardButton,
+    DashboardInput,
+    DashboardSelectInput
   },
 
   props: {
@@ -67,7 +69,7 @@ export default {
     },
 
     store () {
-      Inertia.post(this.route('admin.categories.store'), {
+      Inertia.post(this.route('dashboard.categories.store'), {
         name: this.name,
         description: this.description,
         status: this.status
@@ -75,7 +77,7 @@ export default {
     },
 
     update () {
-      Inertia.put(this.route('admin.categories.update', this.category), {
+      Inertia.put(this.route('dashboard.categories.update', this.category), {
         name: this.name,
         description: this.description,
         status: this.status
@@ -84,7 +86,7 @@ export default {
 
     destroy () {
       // Inertia.delete() equivalent
-      this.$inertia.delete(this.route('admin.categories.destroy', this.category));
+      this.$inertia.delete(this.route('dashboard.categories.destroy', this.category));
     }
   },
 

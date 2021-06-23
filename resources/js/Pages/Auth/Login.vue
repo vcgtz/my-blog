@@ -28,17 +28,17 @@
           <inertia-link v-if="canResetPassword" :href="route('password.request')" class="place-self- underline text-sm text-gray-600 hover:text-gray-900">
             Forgot your password?
           </inertia-link>
-          <admin-button :type="'submit'"
+          <dashboard-button :type="'submit'"
             :disabled="form.processing"
             :class="{ 'opacity-25': form.processing }"
-            class="bg-yellow-400">Log in</admin-button>
+            class="bg-yellow-400">Log in</dashboard-button>
       </div>
     </form>
   </jet-authentication-card>
 </template>
 
 <script>
-import AdminButton from '@/Shared/Admin/Button';
+import DashboardButton from '@/Shared/Dashboard/Button';
 import JetAuthenticationCard from '@/Jetstream/AuthenticationCard'
 import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
 import JetButton from '@/Jetstream/Button'
@@ -49,7 +49,7 @@ import JetValidationErrors from '@/Jetstream/ValidationErrors'
 
 export default {
   components: {
-    AdminButton,
+    DashboardButton,
     JetAuthenticationCard,
     JetAuthenticationCardLogo,
     JetButton,

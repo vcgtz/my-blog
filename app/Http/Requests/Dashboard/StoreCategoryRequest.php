@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Dashboard;
 
-use App\Rules\UniqueTag;
+use App\Models\Category;
+use App\Rules\UniqueCategory;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class StoreTagRequest extends FormRequest
+class StoreCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,9 +29,13 @@ class StoreTagRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                new UniqueTag($this->tag)
+                new UniqueCategory($this->category)
             ],
-            'description' => 'required'
+            'description' => 'required',
+            'status' => [
+                'required',
+                Rule::in([Category::$INACTIVE, Category::$ACTIVE])
+            ]
         ];
     }
 }

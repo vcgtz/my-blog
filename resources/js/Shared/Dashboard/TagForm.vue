@@ -3,29 +3,31 @@
     <form @submit.prevent="submitEvent">
       <div class="mb-3 pt-0">
         <div class="mb-3">
-          <admin-input v-model="name" :error="$page.props.errors.name" label="Tag Name" id="name" name="name"></admin-input>
+          <dashboard-input v-model="name" :error="$page.props.errors.name" label="Tag Name" id="name" name="name"></dashboard-input>
         </div>
 
         <div class="mb-3">
-          <admin-input v-model="description" :error="$page.props.errors.description" label="Tag Description" id="description" name="description"></admin-input>
+          <dashboard-input v-model="description" :error="$page.props.errors.description" label="Tag Description" id="description" name="description"></dashboard-input>
         </div>
       </div>
 
-      <admin-button type="submit" class="bg-yellow-400">Save</admin-button>
-      <admin-button v-if="showDeleteButton" @click="destroy" class="bg-red-400">Delete</admin-button>
+      <dashboard-button type="submit" class="bg-yellow-400">Save</dashboard-button>
+      <dashboard-button v-if="showDeleteButton" @click="destroy" class="bg-red-400">Delete</dashboard-button>
     </form>
   </div>
 </template>
 
 <script>
-import AdminButton from '@/Shared/Admin/Button';
-import AdminInput from '@/Shared/Admin/Input';
+import DashboardButton from '@/Shared/Dashboard/Button';
+import DashboardInput from '@/Shared/Dashboard/Input';
 import { Inertia } from '@inertiajs/inertia';
 
 export default {
+  name: 'DashboardTagForm',
+
   components: {
-    AdminButton,
-    AdminInput
+    DashboardButton,
+    DashboardInput
   },
 
   props: {
@@ -56,14 +58,14 @@ export default {
     },
 
     store () {
-      Inertia.post(this.route('admin.tags.store'), {
+      Inertia.post(this.route('dashboard.tags.store'), {
         name: this.name,
         description: this.description
       });
     },
 
     update () {
-      Inertia.put(this.route('admin.tags.update', this.tag), {
+      Inertia.put(this.route('dashboard.tags.update', this.tag), {
         name: this.name,
         description: this.description
       });
@@ -71,7 +73,7 @@ export default {
 
     destroy () {
       // Inertia.delete() equivalent
-      this.$inertia.delete(this.route('admin.tags.destroy', this.tag));
+      this.$inertia.delete(this.route('dashboard.tags.destroy', this.tag));
     }
   },
 

@@ -6,6 +6,8 @@
 
 <script>
 export default {
+  name: 'DashboardButton',
+
   props: {
     type: {
       type: String,

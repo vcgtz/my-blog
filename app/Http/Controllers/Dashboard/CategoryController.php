@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreCategoryRequest;
+use App\Http\Requests\Dashboard\StoreCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -12,14 +12,14 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return inertia('Admin/Categories/Index', [
+        return inertia('Dashboard/Categories/Index', [
             'categories' => Category::all()
         ]);
     }
 
     public function create()
     {
-        return inertia('Admin/Categories/Create');
+        return inertia('Dashboard/Categories/Create');
     }
 
     public function store(StoreCategoryRequest $request)
@@ -34,12 +34,12 @@ class CategoryController extends Controller
             Category::create($validated);
         }
 
-        return Redirect::route('admin.categories.index');
+        return Redirect::route('dashboard.categories.index');
     }
 
     public function edit(Category $category)
     {
-        return inertia('Admin/Categories/Edit', [
+        return inertia('Dashboard/Categories/Edit', [
             'category' => $category
         ]);
     }
@@ -49,13 +49,13 @@ class CategoryController extends Controller
         $validated = $request->validated();
         $category->update($validated);
 
-        return Redirect::route('admin.categories.index');
+        return Redirect::route('dashboard.categories.index');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
 
-        return Redirect::route('admin.categories.index');
+        return Redirect::route('dashboard.categories.index');
     }
 }

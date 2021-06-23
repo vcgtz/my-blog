@@ -20,6 +20,8 @@
 import Editor from '@tinymce/tinymce-vue';
 
 export default {
+  name: 'DashboardEditor',
+
   components: {
     Editor
   },
