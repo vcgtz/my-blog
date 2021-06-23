@@ -1,15 +1,17 @@
 <template>
   <dashboard-layout>
-    <div class="auto-rows-auto text-gray-800">
-      <div class="w-full">
-        <h1 class="text-3xl">Posts: Edit</h1>
+    <div class="auto-rows-auto text-gray-800 flex justify-between">
+      <div class="pb-2">
+        <h1 class="text-4xl font-black">Posts</h1>
+        <h2 class="text-xl font-black text-gray-500">Edit post</h2>
       </div>
 
-      <div class="w-full">
-        <inertia-link :href="route('dashboard.posts.index')">Index</inertia-link>
-        <inertia-link :href="route('dashboard.posts.create')">Create</inertia-link>
-        <inertia-link :href="route('dashboard.posts.edit', 1)">Edit</inertia-link>
+      <div class="pb-2 self-center">
+        <inertia-link href="#" class="text-blue-400 hover:text-blue-600 underline">Go back</inertia-link>
       </div>
+    </div>
+
+    <div class="auto-rows-auto text-gray-800">
     </div>
   </dashboard-layout>
 </template>

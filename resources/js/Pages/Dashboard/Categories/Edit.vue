@@ -1,15 +1,17 @@
 <template>
   <dashboard-layout>
-    <div class="auto-rows-auto text-gray-800">
-      <div class="pb-2 w-full">
-        <h1 class="text-4xl font-black">Section: CATEGORIES</h1>
-        <h2 class="text-2xl font-black">Edit category</h2>
+    <div class="auto-rows-auto text-gray-800 flex justify-between">
+      <div class="pb-2">
+        <h1 class="text-4xl font-black">Categories</h1>
+        <h2 class="text-xl font-black text-gray-500">Edit category</h2>
       </div>
 
-      <div class="pb-2 w-full">
+      <div class="pb-2 self-center">
         <inertia-link :href="route('dashboard.categories.index')" class="text-blue-400 hover:text-blue-600 underline">Go back</inertia-link>
       </div>
+    </div>
 
+    <div class="auto-rows-auto text-gray-800">
       <dashboard-category-form event="update"></dashboard-category-form>
     </div>
   </dashboard-layout>
