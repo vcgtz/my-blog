@@ -84,7 +84,7 @@ export default {
 
     destroy () {
       // Inertia.delete() equivalent
-      // this.$inertia.delete(this.route('dashboard.categories.destroy', this.category));
+      this.$inertia.delete(this.route('dashboard.posts.destroy', this.post));
     }
   },
 

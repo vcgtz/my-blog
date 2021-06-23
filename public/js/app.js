@@ -20664,8 +20664,9 @@ __webpack_require__.r(__webpack_exports__);
         content: this.content
       });
     },
-    destroy: function destroy() {// Inertia.delete() equivalent
-      // this.$inertia.delete(this.route('dashboard.categories.destroy', this.category));
+    destroy: function destroy() {
+      // Inertia.delete() equivalent
+      this.$inertia["delete"](this.route('dashboard.posts.destroy', this.post));
     }
   },
   mounted: function mounted() {

@@ -45,6 +45,7 @@ Route::middleware(['auth', 'web'])->prefix('dashboard')->group(function () {
         Route::post('/', [PostController::class, 'store'])->name('dashboard.posts.store');
         Route::get('/{post}/edit', [PostController::class, 'edit'])->name('dashboard.posts.edit');
         Route::put('/{post}/edit', [PostController::class, 'update'])->name('dashboard.posts.update');
+        Route::delete('/{post}', [PostController::class, 'destroy'])->name('dashboard.posts.destroy');
     });
 
     Route::prefix('categories')->group(function () {
@@ -53,7 +54,7 @@ Route::middleware(['auth', 'web'])->prefix('dashboard')->group(function () {
         Route::post('/', [CategoryController::class, 'store'])->name('dashboard.categories.store');
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('dashboard.categories.edit');
         Route::put('/{category}/edit', [CategoryController::class, 'update'])->name('dashboard.categories.update');
-        Route::delete('/{category}/edit', [CategoryController::class, 'destroy'])->name('dashboard.categories.destroy');
+        Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('dashboard.categories.destroy');
     });
 
     Route::prefix('tags')->group(function () {
@@ -62,7 +63,7 @@ Route::middleware(['auth', 'web'])->prefix('dashboard')->group(function () {
         Route::post('/', [TagController::class, 'store'])->name('dashboard.tags.store');
         Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('dashboard.tags.edit');
         Route::put('/{tag}/edit', [TagController::class, 'update'])->name('dashboard.tags.update');
-        Route::delete('/{tag}/edit', [TagController::class, 'destroy'])->name('dashboard.tags.destroy');
+        Route::delete('/{tag}', [TagController::class, 'destroy'])->name('dashboard.tags.destroy');
     });
 });
 

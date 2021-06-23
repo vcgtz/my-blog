@@ -59,4 +59,11 @@ class PostController extends Controller
 
         return Redirect::route('dashboard.posts.index');
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return Redirect::route('dashboard.posts.index');
+    }
 }
