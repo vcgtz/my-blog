@@ -11,8 +11,8 @@
         </div>
       </div>
 
-      <dashboard-button type="submit" class="bg-yellow-400">Save</dashboard-button>
-      <dashboard-button v-if="showDeleteButton" @click="destroy" class="bg-red-400">Delete</dashboard-button>
+      <dashboard-button type="submit" class="bg-green-700">Save</dashboard-button>
+      <dashboard-button v-if="showDeleteButton" @click="destroy" class="bg-red-700">Delete</dashboard-button>
     </form>
   </div>
 </template>
