@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Experimental\RandomController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -44,9 +45,16 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+#Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+#    return Inertia::render('Dashboard');
+#})->name('dashboard');
+
+/**
+ * Dashboard Routes
+ */
+Route::middleware(['auth', 'web'])->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+});
 
 /**
  * Admin Posts Routes
