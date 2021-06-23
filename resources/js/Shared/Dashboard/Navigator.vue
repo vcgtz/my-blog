@@ -4,8 +4,12 @@
     <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
     <div class="min-h-screen w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between hidden sm:flex">
       <div class="px-8">
-        <div class="h-16 w-full flex items-center text-white font-black text-xl">
-          My Blog
+        <div class="h-8 pt-4 text-white font-black text-2xl">
+          <div>V. Gutiérrez</div>
+        </div>
+
+        <div class="h-8 pt-4 text-gray-500 font-black text-xl">
+          <div>Blog</div>
         </div>
         
         <dashboard-navigator-list></dashboard-navigator-list>
