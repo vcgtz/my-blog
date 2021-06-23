@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="text-lg">{{ label }}</label>
+    <label class="text-base">{{ label }}</label>
     <input
       v-bind="$attrs"
       :id="id"
@@ -9,7 +9,7 @@
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       ref="input"
-      class="px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full">
+      class="px-3 py-3 border-gray-300 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm focus:outline-none focus:ring focus:ring-blue-400 w-full">
       <span
         v-if="error"
         class="text-red-600 ml-1 font-bold">{{ error }}</span>

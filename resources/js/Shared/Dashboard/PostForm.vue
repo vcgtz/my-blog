@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="bg-white rounded-md p-4 shadow">
     <form @submit.prevent="submitEvent">
       <div class="mb-3 pt-0">
         <div class="mb-3">
           <dashboard-input v-model="title" :error="$page.props.errors.title" label="Post Title" id="title" name="title"></dashboard-input>
         </div>
-        
+
         <div class="mb-3">
           <dashboard-input v-model="slug" :error="$page.props.errors.slug" label="Post Slug" id="slug" name="slug"></dashboard-input>
         </div>

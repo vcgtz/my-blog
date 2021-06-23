@@ -26261,10 +26261,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mb-3 pt-0"
+  "class": "bg-white rounded-md p-4 shadow"
 };
 var _hoisted_2 = {
-  "class": "mb-3"
+  "class": "mb-3 pt-0"
 };
 var _hoisted_3 = {
   "class": "mb-3"
@@ -26272,10 +26272,13 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "mb-3"
 };
+var _hoisted_5 = {
+  "class": "mb-3"
+};
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_dashboard_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-input");
@@ -26284,11 +26287,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_dashboard_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitEvent && $options.submitEvent.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
     modelValue: _ctx.name,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return _ctx.name = $event;
@@ -26299,7 +26302,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "name"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
+  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
     modelValue: _ctx.description,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return _ctx.description = $event;
@@ -26310,7 +26313,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "description"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_select_input, {
+  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_select_input, {
     options: _ctx.statusOptions,
     modelValue: _ctx.status,
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
@@ -26327,7 +26330,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-yellow-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
+      return [_hoisted_6];
     }),
     _: 1
     /* STABLE */
@@ -26338,7 +26341,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-red-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [_hoisted_7];
     }),
     _: 1
     /* STABLE */
@@ -26536,7 +26539,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "text-lg"
+  "class": "text-base"
 };
 var _hoisted_2 = {
   key: 0,
@@ -26554,7 +26557,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.$emit('update:modelValue', $event.target.value);
     }),
     ref: "input",
-    "class": "px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full"
+    "class": "px-3 py-3 border-gray-300 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm focus:outline-none focus:ring focus:ring-blue-400 w-full"
   }), null, 16
   /* FULL_PROPS */
   , ["id", "name", "type", "value"]), $props.error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.error), 1
@@ -26877,10 +26880,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mb-3 pt-0"
+  "class": "bg-white rounded-md p-4 shadow"
 };
 var _hoisted_2 = {
-  "class": "mb-3"
+  "class": "mb-3 pt-0"
 };
 var _hoisted_3 = {
   "class": "mb-3"
@@ -26888,10 +26891,13 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "mb-3"
 };
+var _hoisted_5 = {
+  "class": "mb-3"
+};
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_dashboard_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-input");
@@ -26900,11 +26906,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_dashboard_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitEvent && $options.submitEvent.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
     modelValue: _ctx.title,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return _ctx.title = $event;
@@ -26915,7 +26921,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "title"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
+  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
     modelValue: _ctx.slug,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return _ctx.slug = $event;
@@ -26926,7 +26932,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "slug"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_editor, {
+  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_editor, {
     "onUpdate:content": _cache[3] || (_cache[3] = function ($event) {
       return _ctx.content = $event;
     }),
@@ -26941,7 +26947,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-yellow-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
+      return [_hoisted_6];
     }),
     _: 1
     /* STABLE */
@@ -26952,7 +26958,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-red-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [_hoisted_7];
     }),
     _: 1
     /* STABLE */
@@ -27120,7 +27126,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.$emit('update:modelValue', parseInt($event.target.value));
     }),
     ref: "input",
-    "class": "px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full"
+    "class": "px-3 py-3 border-gray-300 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm focus:outline-none focus:ring focus:ring-blue-400 w-full"
   }), [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.options, function (option) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("option", {
       key: option.id,
@@ -27153,29 +27159,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mb-3 pt-0"
+  "class": "bg-white rounded-md p-4 shadow"
 };
 var _hoisted_2 = {
-  "class": "mb-3"
+  "class": "mb-3 pt-0"
 };
 var _hoisted_3 = {
   "class": "mb-3"
 };
+var _hoisted_4 = {
+  "class": "mb-3"
+};
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_dashboard_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-input");
 
   var _component_dashboard_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitEvent && $options.submitEvent.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
     modelValue: _ctx.name,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return _ctx.name = $event;
@@ -27186,7 +27195,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "name"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
+  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
     modelValue: _ctx.description,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return _ctx.description = $event;
@@ -27202,7 +27211,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-yellow-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
+      return [_hoisted_5];
     }),
     _: 1
     /* STABLE */
@@ -27213,7 +27222,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-red-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
+      return [_hoisted_6];
     }),
     _: 1
     /* STABLE */

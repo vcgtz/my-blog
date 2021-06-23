@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white rounded-md p-4 shadow">
     <form @submit.prevent="submitEvent">
       <div class="mb-3 pt-0">
         <div class="mb-3">

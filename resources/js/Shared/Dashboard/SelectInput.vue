@@ -8,7 +8,7 @@
       :value="modelValue"
       @input="$emit('update:modelValue', parseInt($event.target.value))"
       ref="input"
-      class="px-3 py-3 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm border-0 shadow focus:outline-none focus:ring focus:ring-blue-400 w-full">
+      class="px-3 py-3 border-gray-300 placeholder-gray-300 text-gray-900 relative bg-white rounded text-sm focus:outline-none focus:ring focus:ring-blue-400 w-full">
       <option v-for="option in options" :key="option.id"
         :value="option.id">{{ option.value }}</option>
       </select>
