@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
 
             $table->foreignId('category_id')->constrained();
-            $table->foreignId('status_id')->constrained('post_status');
+            $table->foreignId('status_id')->constrained('post_statuses');
         });
     }
 

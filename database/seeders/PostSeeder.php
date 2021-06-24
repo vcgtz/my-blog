@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostStatus;
 use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
@@ -16,18 +17,18 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        $offTopicCategory = Category::create(['name' => 'OFF-TOPIC', 'description' => 'Topics that are not directly about programming']);
-        $helloTag = Tag::create(['name' => 'hello', 'description' => 'A tag to say hello']);
-        $vcgtzTag = Tag::create(['name' => 'vcgtz', 'description' => 'A tag about me']);
+        $category = Category::create(['name' => 'OFF-TOPIC', 'description' => 'Other things I like to write about']);
+        $tag = Tag::create(['name' => 'me', 'description' => 'Posts directly related to me']);
+        $status = PostStatus::create(['name' => 'IN PROGRESS', 'description' => 'Posts that are in progress']);
 
         $post = Post::create([
             'title' => 'Hello World!',
             'slug' => 'hello-world',
             'content' => 'Hello World!',
-            'category_id' => $offTopicCategory->id
+            'status_id' => $status->id,
+            'category_id' => $category->id
         ]);
 
-        $post->tags()->save($helloTag);
-        $post->tags()->save($vcgtzTag);
+        $post->tags()->save($tag);
     }
 }

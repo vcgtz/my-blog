@@ -14,7 +14,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::create(['name' => 'PHP', 'description' => 'Programming language']);
-        Category::create(['name' => 'JAVASCRIPT', 'description' => 'Programming language']);
+        Category::create(['name' => 'PHP', 'description' => 'Tips, tutorials, tips and more using vanilla PHP']);
+        Category::create(['name' => 'JAVASCRIPT', 'description' => 'Tips, tutorials, tips and more using vanilla Javascript']);
     }
 }

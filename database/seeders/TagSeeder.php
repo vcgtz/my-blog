@@ -14,10 +14,10 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        Tag::create(['name' => 'php', 'description' => 'Programming language']);
-        Tag::create(['name' => 'laravel', 'description' => 'PHP framework']);
-        Tag::create(['name' => 'javascript', 'description' => 'Programming language']);
-        Tag::create(['name' => 'vuejs', 'description' => 'Javascript framework']);
-        Tag::create(['name' => 'reactjs', 'description' => 'Javascript framework']);
+        Tag::create(['name' => 'php', 'description' => 'Posts related to PHP in a general way']);
+        Tag::create(['name' => 'laravel', 'description' => 'Posts related to Laravel in a general way']);
+        Tag::create(['name' => 'javascript', 'description' => 'Posts related to Javascript in a general way']);
+        Tag::create(['name' => 'nodejs', 'description' => 'Posts related to NodeJS in a general way']);
+        Tag::create(['name' => 'vuejs', 'description' => 'Posts related to VueJS in a general way']);
     }
 }
