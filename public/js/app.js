@@ -20635,12 +20635,21 @@ __webpack_require__.r(__webpack_exports__);
     return {
       title: '',
       slug: '',
+      category: null,
       content: ''
     };
   },
   computed: {
     post: function post() {
       return this.$page.props.post;
+    },
+    categories: function categories() {
+      return this.$page.props.categories.map(function (category) {
+        return {
+          id: category.id,
+          value: category.name
+        };
+      });
     },
     showDeleteButton: function showDeleteButton() {
       return this.event === 'update';
@@ -20654,6 +20663,7 @@ __webpack_require__.r(__webpack_exports__);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.post(this.route('dashboard.posts.store'), {
         title: this.title,
         slug: this.slug,
+        category_id: this.category,
         content: this.content
       });
     },
@@ -20661,6 +20671,7 @@ __webpack_require__.r(__webpack_exports__);
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.put(this.route('dashboard.posts.update', this.post), {
         title: this.title,
         slug: this.slug,
+        category_id: this.category,
         content: this.content
       });
     },
@@ -20674,6 +20685,7 @@ __webpack_require__.r(__webpack_exports__);
       this.title = this.post.title;
       this.slug = this.post.slug;
       this.content = this.post.content;
+      this.category = this.post.category_id;
     }
   }
 });
@@ -26913,20 +26925,25 @@ var _hoisted_4 = {
 var _hoisted_5 = {
   "class": "mb-3"
 };
+var _hoisted_6 = {
+  "class": "mb-3"
+};
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_dashboard_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-input");
+
+  var _component_dashboard_select_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-select-input");
 
   var _component_dashboard_editor = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-editor");
 
   var _component_dashboard_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dashboard-button");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
-    onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitEvent && $options.submitEvent.apply($options, arguments);
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_input, {
@@ -26951,9 +26968,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "slug"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_editor, {
+  , ["modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_select_input, {
+    options: $options.categories,
+    modelValue: _ctx.category,
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return _ctx.category = $event;
+    }),
+    error: _ctx.$page.props.errors.category_id,
+    label: "Category",
+    id: "category_id",
+    name: "category_id"
+  }, null, 8
+  /* PROPS */
+  , ["options", "modelValue", "error"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_dashboard_editor, {
     initialValue: _ctx.content,
-    "onUpdate:content": _cache[3] || (_cache[3] = function ($event) {
+    "onUpdate:content": _cache[4] || (_cache[4] = function ($event) {
       return _ctx.content = $event;
     }),
     error: _ctx.$page.props.errors.content,
@@ -26967,7 +26996,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-green-700"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [_hoisted_7];
     }),
     _: 1
     /* STABLE */
@@ -26978,7 +27007,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-red-700"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_7];
+      return [_hoisted_8];
     }),
     _: 1
     /* STABLE */

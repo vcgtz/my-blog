@@ -30,6 +30,7 @@ class StorePostRequest extends FormRequest
                 'required',
                 new UniqueSlug($this->post)
             ],
+            'category_id' => 'required|numeric',
             'content' => 'required',
         ];
     }

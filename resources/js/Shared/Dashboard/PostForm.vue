@@ -11,6 +11,10 @@
         </div>
 
         <div class="mb-3">
+          <dashboard-select-input :options="categories" v-model="category" :error="$page.props.errors.category_id" label="Category" id="category_id" name="category_id"></dashboard-select-input>
+        </div>
+
+        <div class="mb-3">
           <dashboard-editor :initialValue="content" @update:content="content = $event" :error="$page.props.errors.content" label="Post Content" id="content" name="content"></dashboard-editor>
         </div>
       </div>
@@ -48,12 +52,22 @@ export default {
   data: () => ({
     title: '',
     slug: '',
+    category: null,
     content: '',
   }),
 
   computed: {
     post () {
       return this.$page.props.post;
+    },
+
+    categories () {
+      return this.$page.props.categories.map(category => {
+        return {
+          id: category.id,
+          value: category.name
+        }
+      })
     },
 
     showDeleteButton () {
@@ -70,6 +84,7 @@ export default {
       Inertia.post(this.route('dashboard.posts.store'), {
         title: this.title,
         slug: this.slug,
+        category_id: this.category,
         content: this.content
       });
     },
@@ -78,6 +93,7 @@ export default {
       Inertia.put(this.route('dashboard.posts.update', this.post), {
         title: this.title,
         slug: this.slug,
+        category_id: this.category,
         content: this.content
       });
     },
@@ -93,6 +109,7 @@ export default {
       this.title = this.post.title;
       this.slug = this.post.slug;
       this.content = this.post.content;
+      this.category = this.post.category_id;
     }
   }
 }

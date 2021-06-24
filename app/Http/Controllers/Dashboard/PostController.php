@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\StorePostRequest;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -25,7 +26,11 @@ class PostController extends Controller
 
     public function create()
     {
-        return inertia('Dashboard/Posts/Create');
+        $categories = Category::where('status', Category::$ACTIVE)->get();
+
+        return inertia('Dashboard/Posts/Create', [
+            'categories' => $categories
+        ]);
     }
 
     public function store(StorePostRequest $request)
@@ -37,8 +42,6 @@ class PostController extends Controller
             $post->restore();
             $post->update($validated);
         } else {
-            $validated['category_id'] = 1; // ToDo Remove this when the category appears in the form
-
             Post::create($validated);
         }
 
@@ -47,8 +50,11 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        $categories = Category::where('status', Category::$ACTIVE)->get();
+
         return inertia('Dashboard/Posts/Edit', [
-            'post' => $post
+            'post' => $post,
+            'categories' => $categories
         ]);
     }
 
