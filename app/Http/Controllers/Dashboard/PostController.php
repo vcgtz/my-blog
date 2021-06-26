@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -27,9 +28,11 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::where('status', Category::$ACTIVE)->get();
+        $statuses = PostStatus::all();
 
         return inertia('Dashboard/Posts/Create', [
-            'categories' => $categories
+            'categories' => $categories,
+            'statuses' => $statuses
         ]);
     }
 
@@ -51,10 +54,12 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::where('status', Category::$ACTIVE)->get();
+        $statuses = PostStatus::all();
 
         return inertia('Dashboard/Posts/Edit', [
             'post' => $post,
-            'categories' => $categories
+            'categories' => $categories,
+            'statuses' => $statuses
         ]);
     }
 

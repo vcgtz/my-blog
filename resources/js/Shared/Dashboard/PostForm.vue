@@ -15,6 +15,10 @@
         </div>
 
         <div class="mb-3">
+          <dashboard-select-input :options="statuses" v-model="status" :error="$page.props.errors.status_id" label="Status" id="status_id" name="status_id"></dashboard-select-input>
+        </div>
+
+        <div class="mb-3">
           <dashboard-editor :initialValue="content" @update:content="content = $event" :error="$page.props.errors.content" label="Post Content" id="content" name="content"></dashboard-editor>
         </div>
       </div>
@@ -53,6 +57,7 @@ export default {
     title: '',
     slug: '',
     category: null,
+    status: null,
     content: '',
   }),
 
@@ -67,7 +72,16 @@ export default {
           id: category.id,
           value: category.name
         }
-      })
+      });
+    },
+
+    statuses () {
+      return this.$page.props.statuses.map(status => {
+        return {
+          id: status.id,
+          value: status.name
+        }
+      });
     },
 
     showDeleteButton () {
@@ -85,6 +99,7 @@ export default {
         title: this.title,
         slug: this.slug,
         category_id: this.category,
+        status_id: this.status,
         content: this.content
       });
     },
@@ -94,6 +109,7 @@ export default {
         title: this.title,
         slug: this.slug,
         category_id: this.category,
+        status_id: this.status,
         content: this.content
       });
     },
@@ -110,6 +126,7 @@ export default {
       this.slug = this.post.slug;
       this.content = this.post.content;
       this.category = this.post.category_id;
+      this.status = this.post.status_id;
     }
   }
 }
