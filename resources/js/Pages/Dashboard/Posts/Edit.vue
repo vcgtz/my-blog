@@ -7,7 +7,7 @@
       </div>
 
       <div class="pb-2 self-center">
-        <inertia-link href="#" class="text-blue-400 hover:text-blue-600 underline">Go back</inertia-link>
+        <inertia-link :href="route('dashboard.posts.index')" class="text-blue-400 hover:text-blue-600 underline">Go back</inertia-link>
       </div>
     </div>
 

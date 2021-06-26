@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index()
     {
         return inertia('Dashboard/Posts/Index', [
-            'posts' => Post::with(['category', 'tags'])->get()
+            'posts' => Post::with(['category', 'tags', 'status'])->get()
         ]);
     }
 
