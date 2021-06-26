@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="text-lg">{{ label }}</label>
+    <label class="text-base">{{ label }}</label>
     <editor
       v-bind="$attrs"
       v-model="content"
