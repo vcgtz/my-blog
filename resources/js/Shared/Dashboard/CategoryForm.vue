@@ -63,6 +63,12 @@ export default {
     }
   },
 
+  watch: {
+    name (value) {
+      this.name = value.toUpperCase();
+    },
+  },
+
   methods: {
     submitEvent () {
       this[this.event]();
