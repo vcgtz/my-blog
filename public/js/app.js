@@ -20823,6 +20823,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.event === 'update';
     }
   },
+  watch: {
+    name: function name(value) {
+      this.name = value.toLowerCase();
+    }
+  },
   methods: {
     submitEvent: function submitEvent() {
       this[this.event]();

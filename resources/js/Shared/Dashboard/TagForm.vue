@@ -52,6 +52,12 @@ export default {
     }
   },
 
+  watch: {
+    name (value) {
+      this.name = value.toLowerCase();
+    }
+  },
+
   methods: {
     submitEvent () {
       this[this.event]();
