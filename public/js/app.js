@@ -20669,6 +20669,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.event === 'update';
     }
   },
+  watch: {
+    title: function title() {
+      this.slug = this.titleToSlug();
+    }
+  },
   methods: {
     submitEvent: function submitEvent() {
       this[this.event]();
@@ -20694,6 +20699,20 @@ __webpack_require__.r(__webpack_exports__);
     destroy: function destroy() {
       // Inertia.delete() equivalent
       this.$inertia["delete"](this.route('dashboard.posts.destroy', this.post));
+    },
+    titleToSlug: function titleToSlug() {
+      var str = this.title;
+      str = str.replace(/^\s+|\s+$/g, '');
+      str = str.toLowerCase();
+      var from = 'ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;';
+      var to = 'aaaaaeeeeeiiiiooooouuuunc------';
+
+      for (var i = 0, j = from.length; i < j; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+      }
+
+      str = str.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+      return str;
     }
   },
   mounted: function mounted() {

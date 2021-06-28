@@ -89,6 +89,12 @@ export default {
     }
   },
 
+  watch: {
+    title () {
+      this.slug = this.titleToSlug();
+    }
+  },
+
   methods: {
     submitEvent () {
       this[this.event]();
@@ -117,6 +123,26 @@ export default {
     destroy () {
       // Inertia.delete() equivalent
       this.$inertia.delete(this.route('dashboard.posts.destroy', this.post));
+    },
+
+    titleToSlug () {
+      let str = this.title;
+
+      str = str.replace(/^\s+|\s+$/g, '');
+      str = str.toLowerCase();
+
+      const from = 'ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;';
+      const  to   = 'aaaaaeeeeeiiiiooooouuuunc------';
+      
+      for (let i = 0, j = from.length ; i < j; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+      }
+
+      str = str.replace(/[^a-z0-9 -]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+
+      return str;
     }
   },
 
