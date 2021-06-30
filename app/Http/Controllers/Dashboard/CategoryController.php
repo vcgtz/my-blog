@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\StoreCategoryRequest;
+use App\Http\Requests\Dashboard\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -22,7 +22,7 @@ class CategoryController extends Controller
         return inertia('Dashboard/Categories/Create');
     }
 
-    public function store(StoreCategoryRequest $request)
+    public function store(CategoryRequest $request)
     {
         $validated = $request->validated();
         $category = Category::onlyTrashed()->where('name', $validated['name'])->first();
@@ -44,7 +44,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function update(StoreCategoryRequest $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
         $validated = $request->validated();
         $category->update($validated);

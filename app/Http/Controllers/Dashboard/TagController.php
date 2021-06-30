@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\StoreTagRequest;
+use App\Http\Requests\Dashboard\TagRequest;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -22,7 +22,7 @@ class TagController extends Controller
         return inertia('Dashboard/Tags/Create');
     }
 
-    public function store(StoreTagRequest $request)
+    public function store(TagRequest $request)
     {
         $validated = $request->validated();
         $tag = Tag::onlyTrashed()->where('name', $validated['name'])->first();
@@ -44,7 +44,7 @@ class TagController extends Controller
         ]);
     }
 
-    public function update(StoreTagRequest $request, Tag $tag)
+    public function update(TagRequest $request, Tag $tag)
     {
         $validated = $request->validated();
         $tag->update($validated);
